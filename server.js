@@ -3,6 +3,15 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const { notes } = require('./db/db.json');
 
+app.get('/api/notes', (req, res) => {
+    const result = notes;
+    if (result) {
+        res.json(result);
+    } else {
+        res.send(404);
+    }
+});
+
 app.get('/api/notes/:id', (req, res) => {
     const result = findById(req.params.id, notes);
     if (result) {
