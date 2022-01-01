@@ -2,28 +2,19 @@ const express = require('express');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-const { notes } = require('./db/db');
-
-app.get('/api/notes', (req, res) => {
-    const result = notes;
-    if (result) {
-        res.json(result);
-    } else {
-        res.send(404);
-    }
-});
+const notes = require('./db/db');
 
 app.get('/api/notes/:id', (req, res) => {
-    const result = findById(req.params.id, notes);
-    if (result) {
-        res.json(result);
+    const results = findById(req.params.id, notes);
+    if (results) {
+        res.json(results);
     } else {
         res.send(404);
     }
 });
 
 function findById(id, notes) {
-    const result = notes.filter(animal => animal.id === id)[0];
+    const result = notes.filter(note => note.id === id)[0];
     return result;
 }
 
