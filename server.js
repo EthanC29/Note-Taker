@@ -2,7 +2,7 @@ const express = require('express');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-const notes = require('./db/db');
+const { notes } = require('./db/db');
 
 app.get('/api/notes/:id', (req, res) => {
     const results = findById(req.params.id, notes);
