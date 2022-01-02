@@ -4,6 +4,9 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const { notes } = require('./db/db');
 
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
+
 app.get('/api/notes/:id', (req, res) => {
     const results = findById(req.params.id, notes);
     if (results) {
