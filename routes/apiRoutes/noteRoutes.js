@@ -2,6 +2,13 @@ const router = require('express').Router();
 const { findById, createNewNote, validateNote } = require('../../lib/notes');
 const { notes } = require('../../db/db');
 
+router.get('/notes', (req, res) => {
+    const result = notes;
+    if (result) {
+        res.json(result);
+    }
+});
+
 router.get('/notes/:id', (req, res) => {
 const result = findById(req.params.id, notes);
 if (result) {
