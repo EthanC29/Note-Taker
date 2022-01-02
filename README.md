@@ -35,3 +35,9 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 - [The URL of the functional application, deployed on heroku](https://pure-depths-29539.herokuapp.com/)
 
 - [The URL of the GitHub repository](https://github.com/EthanC29/Note-Taker)
+
+## Screenshots
+
+![1](./dist/1.png)
+![2](./dist/2.png)
+![3](./dist/3.png)
