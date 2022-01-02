@@ -1,9 +1,14 @@
 {
-    "notes": [
-        {
-            "title":"Test",
-            "text":"Test",
-            "id":"12345"
-        }
-    ]
+  "notes": [
+    {
+      "title": "Test",
+      "text": "Test",
+      "id": "12345"
+    },
+    {
+      "title": "ij3irjiwe",
+      "text": "w3hruwehru",
+      "id": "1"
+    }
+  ]
 }
