@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const { findById, createNewNote, validateNote } = require('../../lib/notes');
+const { findById, createNewNote } = require('../../lib/notes');
 const { notes } = require('../../db/db');
 
+// GET /api/notes reads db.json and returns the contents
 router.get('/notes', (req, res) => {
     const result = notes;
     if (result) {
@@ -9,25 +10,20 @@ router.get('/notes', (req, res) => {
     }
 });
 
-router.get('/notes/:id', (req, res) => {
-const result = findById(req.params.id, notes);
-if (result) {
-    res.json(result);
-} else {
-    res.send(404);
-}
-});
-
+// POST /api/notes receives req body and adds it to db.json
 router.post('/notes', (req, res) => {
-// set id based on what the next index of the array will be
-req.body.id = notes.length.toString();
-
-if (!validateNote(req.body)) {
-    res.status(400).send('The note is not properly formatted.');
-} else {
+    // Create new note and sets id based on the index of the array
+    req.body.id = notes.length.toString();
     const note = createNewNote(req.body, notes);
     res.json(note);
-}
 });
+
+// BONUS: DELETE /api/notes/:id code - unfinished
+router.delete('/notes/:id', (req, res) => {
+    const result = findById(req.params.id, notes);
+    if (result) {
+        res.json(result);
+    }
+})
 
 module.exports = router;

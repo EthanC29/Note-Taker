@@ -1,14 +1,19 @@
 {
   "notes": [
     {
-      "title": "Test",
-      "text": "Test",
+      "title": "New Test",
+      "text": "Test description",
       "id": "0"
     },
     {
-      "title": "ij3irjiwe",
-      "text": "w3hruwehru",
+      "title": "Exam next week",
+      "text": "Make sure to study chapters 10, 11 & 12",
       "id": "1"
+    },
+    {
+      "title": "Anniversary on the 23rd",
+      "text": "Check back that the gift will be ready",
+      "id": "2"
     }
   ]
 }

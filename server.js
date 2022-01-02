@@ -1,5 +1,6 @@
 const express = require('express');
 
+// Set port to heroku default or 3001
 const PORT = process.env.PORT || 3001;
 const app = express();
 const apiRoutes = require('./routes/apiRoutes');
@@ -9,6 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
+// api & html routes
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
